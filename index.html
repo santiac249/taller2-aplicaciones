@@ -1,19 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="js/utils/almacenamiento.js"></script>
-    
+    <script src="js/utils/carro.js"></script>
+
     <script src="js/main.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <input type="text" id="dato">
-    <input type="button" value="Guardar" id="btn_enviar">
+    <nav class="barra">
+        <h1 class="titulo">Carrito de compras</h1>
+        <div class="carrito_compras">
+            <img src="/img/carrito.png" alt="carrito" width="50px" height="50px">
+            <span id="cantidad">0</span>
+        </div>
+    </nav>
+    <section class="productos">
+        <div class="producto">
+            <div class="img_producto">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_852134-MLU74832235973_022024-O.webp">
+            </div>
+            <div class="info_producto">
+                <span class="nombre_producto">Silla Bonita</span>
+                <img class="carro_producto" src="/img/carrito.png" alt="carrito" width="20px" height="20px">
+            </div>
+        </div>
+        <div class="producto">
+            <div class="img_producto">
+                <img src=" https://http2.mlstatic.com/D_NQ_NP_971008-MLU75257911508_032024-O.webp">
+            </div>
+            <div class="info_producto">
+                <span class="nombre_producto">Hidro</span>
+                <img class="carro_producto" src="/img/carrito.png" alt="carrito" width="20px" height="20px">
+            </div>
+        </div>
+        <div class="producto">
+            <div class="img_producto">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_755758-MCO74683163093_022024-O.webp">
+            </div>
+            <div class="info_producto">
+                <span class="nombre_producto">Royal</span>
+                <img class="carro_producto" src="/img/carrito.png" alt="carrito" width="20px" height="20px">
+            </div>
+        </div>
+        <div class="producto">
+            <div class="img_producto">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_601441-MLA50927512678_072022-O.webp">
+            </div>
+            <div class="info_producto">
+                <span class="nombre_producto">Bicicleta</span>
+                <img class="carro_producto" src="/img/carrito.png" alt="carrito" width="20px" height="20px">
+            </div>
+        </div>
+        <div class="producto">
+            <div class="img_producto">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_852134-MLU74832235973_022024-O.webp">
+            </div>
+            <div class="info_producto">
+                <span class="nombre_producto">Silla Bonita 2</span>
+                <img class="carro_producto" src="/img/carrito.png" alt="carrito" width="20px" height="20px">
+            </div>
+        </div>
+        <div class="producto">
+            <div class="img_producto">
+                <img src=" https://http2.mlstatic.com/D_NQ_NP_971008-MLU75257911508_032024-O.webp">
+            </div>
+            <div class="info_producto">
+                <span class="nombre_producto">Hidro 2</span>
+                <img class="carro_producto" src="/img/carrito.png" alt="carrito" width="20px" height="20px">
+            </div>
+        </div>
+        <div class="producto">
+            <div class="img_producto">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_755758-MCO74683163093_022024-O.webp">
+            </div>
+            <div class="info_producto">
+                <span class="nombre_producto">Royal 2</span>
+                <img class="carro_producto" src="/img/carrito.png" alt="carrito" width="20px" height="20px">
+            </div>
+        </div>
+        <div class="producto">
+            <div class="img_producto">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_601441-MLA50927512678_072022-O.webp">
+            </div>
+            <div class="info_producto">
+                <span class="nombre_producto">Bicicleta 2</span>
+                <img class="carro_producto" src="/img/carrito.png" alt="carrito" width="20px" height="20px">
+            </div>
+        </div>
+    </section>
 
-    <br>
-
-    <select name="" id="numeros"></select>
 </body>
+
 </html>

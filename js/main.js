@@ -1,19 +1,21 @@
-let datos = [];
-let dato, numeros;
+let cantidad;
+let productos = [];
+window.onload = () => {
+    cantidad = document.getElementById("cantidad");
 
-window.onload = () =>{
-    dato = document.getElementById("dato");
-    numeros = document.getElementById("numeros")
-    let btn = document.getElementById("btn_enviar");
-
-    datos = localStorage.getItem("datos")  ? JSON.parse(localStorage.getItem("datos")) : []
-    let local = new Almacenamiento({
-        dato:dato,
-        numeros:numeros
+    productos = localStorage.getItem("productos") ? JSON.parse(localStorage.getItem("productos")) : []
+    let local = new Carro({
+        cantidad: cantidad,
+        productos: productos
     });
-    
-    btn.addEventListener("click",local.guardar.bind(null,local));
-    local.agregarNumeros(datos);
 
+    const elementosProducto = document.querySelectorAll('.producto');
+    elementosProducto.forEach(elemento => {
+        const carrito = elemento.querySelector('.carro_producto');
+        const nombre = elemento.querySelector('.nombre_producto').innerText;
+        const producto = { nombre: nombre, cantidad: 1 };
+        carrito.addEventListener("click", () => local.agregarProducto(producto));
+    });
 
+    local.actualizarCantidad()
 }
