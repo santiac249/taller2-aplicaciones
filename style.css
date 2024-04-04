@@ -22,7 +22,6 @@ body {
     margin: 15px;
     width: fit-content;
     border-radius: 50%;
-
     padding: 10px;
     border: 1px solid black;
     position: relative;
@@ -51,6 +50,7 @@ body {
 
 .producto {
     max-width: 250px;
+    min-width: 220px;
     flex-grow: 1;
     border: 1px solid black;
     border-radius: 20px;
@@ -80,4 +80,43 @@ body {
 
 .info_producto img {
     cursor: pointer;
+}
+
+.controles{
+    display: flex;
+}
+
+.control{
+    background-color: #5EF38C;
+    border: 1px solid #10512A;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cantidad{
+    width: 22px;
+    margin: 0 5px;
+    height: 28px;
+    padding: 0;
+    text-align: center;
+}
+
+.btn_agregar {
+   width: 100px;
+   margin-top: 5px; 
+   background-color: #5EF38C;
+   border-radius: 5px;
+   border: 1px solid #10512A; 
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.txt_agregar{
+    margin: 5px;
 }
