@@ -5,27 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="js/utils/almacenamiento.js"></script>    
-    <script src="js/main.js"></script>
+    <script src="js/otro.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="column add-bottom">
-            <div id="mainwrap">
-                <div id="audiowrap">
-                    <div id="audio0">
-                        <audio id="audio1" preload controls>Your browser does not support HTML5 Audio! 😢</audio>
-                    </div>
-                    <div id="tracks">
-                        <a id="btnPrev">&larr;</a><a id="btnNext">&rarr;</a>
-                    </div>
-                </div>
-                <div id="plwrap">
-                    <ul id="plList"></ul>
-                </div>
+    <div id=reproductor>
+        <div id="cabecera">
+          <div id="controles">
+            <img src="/img/play.png" class="boton fa fa-play fa-2x" id="play" onClick="playorpause()"></img>
+            <img src="/img/pause.png" class="boton fa fa-play fa-2x" id="pause" onClick="playorpause()"></img>
+            <div id=volumecontrol>
+              <i class="fa fa-volume-up"></i>
+              <input type="range" orient="vertical" oninput="setVolume()" id="volume" min=0 max=1 step=0.01 value=0.5>
+              <i class="fa fa-volume-down"></i>
             </div>
+          </div>
+          <div class="separador"></div>
+          <div id="progreso">
+            <span id="actual">00:00</span>
+            <progress id="meter" value="0" max="1">Tu navegador no soporta las barras de progreso.</progress>
+            <span id="duracion">00:00</span>
+          </div>
+          <div id="aviso">&nbsp;</div>
         </div>
-    </div>
-    
+        <div id="cover"><img src="https://files.catbox.moe/8w7cil.jpg
+          " alt="Cover" /></div>
+        <div id="lista" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <div class="song" onClick="selectPlay(song1)"><audio preload="auto" id="song1" src="https://raw.githubusercontent.com/Androws/Proyecto_HTML/gh-pages/audio/ziggy/01-FiveYears.mp3"></audio><div class="test">Five Years</div></div>
+      
+          <div class="song" onClick="selectPlay(song2)"><audio preload="auto" id="song2" src="https://raw.githubusercontent.com/Androws/Proyecto_HTML/gh-pages/audio/ziggy/02-SoulLove.mp3"></audio>Soul Love</div>
+      
+          <div class="song" onClick="selectPlay(song3)"><audio preload="auto" id="song3" src="https://raw.githubusercontent.com/Androws/Proyecto_HTML/gh-pages/audio/ziggy/03-MoonageDaydream.mp3"></audio>Moonage Daydream</div>
+      
+          <div class="song" onClick="selectPlay(song4)"><audio preload="auto" id="song4" src="http://vps68705.ovh.net/audio/ziggy/04-Starman.mp3"></audio>Starman</div>
+      
+          <div class="song" onClick="selectPlay(song5)"><audio preload="auto" id="song5" src="https://raw.githubusercontent.com/Androws/Proyecto_HTML/gh-pages/audio/ziggy/05-ItAintEasy.mp3"></audio>It Ain't Easy</div>
+      
+          <div class="song" onClick="selectPlay(song6)"><audio preload="auto" id="song6" src="https://raw.githubusercontent.com/Androws/Proyecto_HTML/gh-pages/audio/ziggy/06-LadyStardust.mp3"></audio>Lady Stardust</div>
+      
+          <div class="song" onClick="selectPlay(song7)"><audio preload="auto" id="song7" src="https://raw.githubusercontent.com/Androws/Proyecto_HTML/gh-pages/audio/ziggy/07-Star.mp3"></audio>Star</div>
+      
+          <div class="song" onClick="selectPlay(song8)"><audio preload="auto" id="song8" src="https://raw.githubusercontent.com/Androws/Proyecto_HTML/gh-pages/audio/ziggy/08-HangOnToYourself.mp3"></audio>Hang on to Yourself</div>
+      
+          <div class="song" onClick="selectPlay(song9)"><audio preload="auto" id="song9" src="https://raw.githubusercontent.com/Androws/Proyecto_HTML/gh-pages/audio/ziggy/09-ZiggyStardust.mp3"></audio>Ziggy Stardust</div>
+      
+          <div class="song" onClick="selectPlay(song10)"><audio preload="auto" id="song10" src="https://raw.githubusercontent.com/Androws/Proyecto_HTML/gh-pages/audio/ziggy/10-SuffragetteCity.mp3"></audio>Suffragette City</div>
+      
+          <div class="song" onClick="selectPlay(song11)"><audio preload="auto" id="song11" src="https://raw.githubusercontent.com/Androws/Proyecto_HTML/gh-pages/audio/ziggy/11-RocknRollSuicide.mp3"></audio>Rock 'n' Roll Suicide</div>
+        </div>
+        <div class="separador"></div>
+      </div>
+      <p>Works better in Chrome™</p>
 </body>
 </html>
