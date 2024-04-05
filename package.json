@@ -1,12 +1,15 @@
 {
   "name": "taller2-aplicaciones",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "local":"http-server -c-1 -p0"
+    "local": "http-server -c-1 -p0"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
 }
