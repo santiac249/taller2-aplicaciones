@@ -12,19 +12,27 @@ body {
     z-index: 1000;
 }
 
+.barra-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
 .titulo {
     font-size: 30px;
     margin-left: 15px;
     color: #10512A;
 }
 
-.carrito_compras {
+.borde-imagen {
     margin: 15px;
     width: fit-content;
     border-radius: 50%;
     padding: 10px;
     border: 1px solid black;
     position: relative;
+    cursor: pointer;
 }
 
 #cantidad {
@@ -82,11 +90,11 @@ body {
     cursor: pointer;
 }
 
-.controles{
+.controles {
     display: flex;
 }
 
-.control{
+.control {
     background-color: #5EF38C;
     border: 1px solid #10512A;
     width: 30px;
@@ -98,10 +106,14 @@ body {
     cursor: pointer;
 }
 
-.cantidad{
+.cantidad {
     width: 22px;
     margin: 0 5px;
     height: 28px;
     padding: 0;
     text-align: center;
+}
+
+.ocultar {
+    display: none !important;
 }

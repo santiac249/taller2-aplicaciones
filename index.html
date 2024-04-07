@@ -5,21 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-   
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <nav class="barra">
-        <h1 class="titulo">Carrito de compras</h1>
-        <div class="carrito_compras">
+        <div class="barra-info" onclick="mostrarVistaProductos()">
+            <img src="/img/casa.png" class="borde-imagen" alt="home" width="50px" height="50px">
+            <h1 class="titulo">Carrito de compras</h1>
+        </div>
+        <div class="borde-imagen" onclick="mostrarVistaCarro()">
             <img src="/img/carrito.png" alt="carrito" width="50px" height="50px">
             <span id="cantidad">0</span>
         </div>
     </nav>
     <section class="productos" id="productos">
-      
-     
+
+
+    </section>
+    <section class="productos" id="productos-agregados">
+
     </section>
     <script src="js/main.js" type="module"></script>
 </body>
