@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="js/utils/almacenamiento.js"></script>    
-    <script src="js/otro.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div id=reproductor>
         <div id="cabecera">
           <div id="controles">
-            <img src="/img/play.png" class="boton fa fa-play fa-2x" id="play" onClick="playorpause()"></img>
-            <img src="/img/pause.png" class="boton fa fa-play fa-2x" id="pause" onClick="playorpause()"></img>
+            <img src="/img/play.png" class="btn" id="btn_play" ></img>
+            <img src="/img/pause.png" class="btn ocultar" id="btn_pause"></img>
             <div id=volumecontrol>
               <i class="fa fa-volume-up"></i>
               <input type="range" orient="vertical" oninput="setVolume()" id="volume" min=0 max=1 step=0.01 value=0.5>
@@ -28,8 +28,6 @@
           </div>
           <div id="aviso">&nbsp;</div>
         </div>
-        <div id="cover"><img src="https://files.catbox.moe/8w7cil.jpg
-          " alt="Cover" /></div>
         <div id="lista" ondrop="drop(event)" ondragover="allowDrop(event)">
           <div class="song" onClick="selectPlay(song1)"><audio preload="auto" id="song1" src="https://raw.githubusercontent.com/Androws/Proyecto_HTML/gh-pages/audio/ziggy/01-FiveYears.mp3"></audio><div class="test">Five Years</div></div>
       
@@ -37,7 +35,7 @@
       
           <div class="song" onClick="selectPlay(song3)"><audio preload="auto" id="song3" src="https://raw.githubusercontent.com/Androws/Proyecto_HTML/gh-pages/audio/ziggy/03-MoonageDaydream.mp3"></audio>Moonage Daydream</div>
       
-          <div class="song" onClick="selectPlay(song4)"><audio preload="auto" id="song4" src="http://vps68705.ovh.net/audio/ziggy/04-Starman.mp3"></audio>Starman</div>
+          <!-- <div class="song" onClick="selectPlay(song4)"><audio preload="auto" id="song4" src="http://vps68705.ovh.net/audio/ziggy/04-Starman.mp3"></audio>Starman</div>
       
           <div class="song" onClick="selectPlay(song5)"><audio preload="auto" id="song5" src="https://raw.githubusercontent.com/Androws/Proyecto_HTML/gh-pages/audio/ziggy/05-ItAintEasy.mp3"></audio>It Ain't Easy</div>
       
@@ -51,7 +49,7 @@
       
           <div class="song" onClick="selectPlay(song10)"><audio preload="auto" id="song10" src="https://raw.githubusercontent.com/Androws/Proyecto_HTML/gh-pages/audio/ziggy/10-SuffragetteCity.mp3"></audio>Suffragette City</div>
       
-          <div class="song" onClick="selectPlay(song11)"><audio preload="auto" id="song11" src="https://raw.githubusercontent.com/Androws/Proyecto_HTML/gh-pages/audio/ziggy/11-RocknRollSuicide.mp3"></audio>Rock 'n' Roll Suicide</div>
+          <div class="song" onClick="selectPlay(song11)"><audio preload="auto" id="song11" src="https://raw.githubusercontent.com/Androws/Proyecto_HTML/gh-pages/audio/ziggy/11-RocknRollSuicide.mp3"></audio>Rock 'n' Roll Suicide</div> -->
         </div>
         <div class="separador"></div>
       </div>

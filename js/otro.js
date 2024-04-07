@@ -1,5 +1,5 @@
-var selectedSong;
-var currentSong;
+let selectedSong;
+let currentSong;
 
 //Función para seleccionar una canción
 function selectPlay(clickedId) {

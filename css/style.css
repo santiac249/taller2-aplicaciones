@@ -3,12 +3,12 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 
-body {
+/* body {
     font-family: 'Lato', sans-serif;
     background: #4B79A1;
     background: -webkit-linear-gradient(to left, #4B79A1, #283E51);
     background: linear-gradient(to left, #4B79A1, #283E51);
-  }
+  } */
   
   #reproductor {
     width: 80%;
@@ -180,4 +180,12 @@ body {
     100% {
       left: 100%;
     }
+  }
+
+  .btn{
+    cursor:pointer;
+  }
+
+  .ocultar{
+    display:none;
   }

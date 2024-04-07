@@ -11,8 +11,8 @@ let btn_play, btn_pause;
 let sonido, volumen;
 
 window.onload = function(){
-  control_volumen = document.getElementById("control_volumen");
-  control_stereo = document.getElementById("control_stereo");
+//   control_volumen = document.getElementById("control_volumen");
+//   control_stereo = document.getElementById("control_stereo");
   btn_play = document.getElementById("btn_play");
   btn_pause = document.getElementById("btn_pause");
   
@@ -25,26 +25,26 @@ window.onload = function(){
 
  btn_play.addEventListener("click",reproducir);
  btn_pause.addEventListener("click",pausar);
- control_volumen.addEventListener("change",actualizarVolumen);
- control_stereo.addEventListener("change",actualizarStereo);
- volumen = localStorage.getItem("volumen");
- if(volumen){
-   sonido.volume(volumen);
-   control_volumen.value = volumen;
- }
+//  control_volumen.addEventListener("change",actualizarVolumen);
+//  control_stereo.addEventListener("change",actualizarStereo);
+//  volumen = localStorage.getItem("volumen");
+//  if(volumen){
+//    sonido.volume(volumen);
+//    control_volumen.value = volumen;
+//  }
   
 }
 
-function actualizarVolumen(evento){
-  volumen = evento.target.value;
-  sonido.volume(volumen);
-  localStorage.setItem("volumen",volumen);
-}
+// function actualizarVolumen(evento){
+//   volumen = evento.target.value;
+//   sonido.volume(volumen);
+//   localStorage.setItem("volumen",volumen);
+// }
 
-function actualizarStereo(evento){
-  let valor = parseFloat(evento.target.value).toFixed(2);
-  sonido.stereo(valor);
-}
+// function actualizarStereo(evento){
+//   let valor = parseFloat(evento.target.value).toFixed(2);
+//   sonido.stereo(valor);
+// }
 
 function reproducir(){
   sonido.play();
