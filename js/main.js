@@ -1,10 +1,11 @@
 import Carro from "./utils/carro.js";
 import Producto from "./utils/producto.js";
 
-
+let local;
 let cantidad;
 let productosCarro = [];
-const productosTienda = [
+
+window.productosTienda = [
     new Producto({
         id: 1,
         nombre: 'Moto',
@@ -13,24 +14,28 @@ const productosTienda = [
         descripcion: 'Moto bonita'
     }),
     new Producto({
-        id: 1,
+        id: 2,
         nombre: 'Segundazo',
         precio: '10.000.000',
         imagen: 'https://carroya-commons.avaldigitallabs.com/2075feab-8552-4aad-aeea-8d2573e6dfcd/2075feab-8552-4aad-aeea-8d2573e6dfcd_1708548307442_l.jpg',
         descripcion: 'Fz usada'
     }),
+];
 
-    
-]
+window.agregarProducto = function (id) {
+    const producto = productosTienda.find(prod => prod.id === id);
+    if (producto) {
+        local.agregarProducto(producto);
+    }
+}
 
-function mostrarProductos(){
+function mostrarProductos() {
     let temp = '';
     const sectionProductos = document.querySelector('.productos')
 
-    for(var i in productosTienda) {
-
-        temp += 
-        `<div class="producto">
+    for (var i in productosTienda) {
+        temp +=
+            `<div class="producto">
             <div class="img_producto">
                 <img src="${productosTienda[i].imagen}">
             </div>
@@ -42,44 +47,43 @@ function mostrarProductos(){
                     <br>
                     <span >${productosTienda[i].precio}</span>
                 </div>
-                <div>
-                    
-                <div class="controles">
-                        <span class="control">-</span>
                 
-                        <input type="text" value="0" class="cantidad">
-                        <span class="control">+</span>
+                    
+                    <div class="controles">
+                        <span onclick="productosTienda[${i}].restarCantidad()" class="control">-</span>
+                        <input type="text" value="0" class="cantidad" id="cantidad-${productosTienda[i].id}">
+                        <span onclick="productosTienda[${i}].sumarCantidad()" class="control">+</span>
                     </div>
-                    <button class="btn_agregar">
-                        <img class="carro_producto" src="/img/carrito.png" alt="carrito" width="20px" height="20px">
-                        <span class="txt_agregar">Agregar</span>
-                    </button>
-                </div>
+            
+                
             </div>
         </div>`;
     }
 
     sectionProductos.innerHTML = temp;
-    
+
 }
 
 window.onload = () => {
     mostrarProductos()
-    /* cantidad = document.getElementById("cantidad");
+    cantidad = document.getElementById("cantidad");
 
     productosCarro = localStorage.getItem("productos") ? JSON.parse(localStorage.getItem("productos")) : []
-    let local = new Carro({
+    local = new Carro({
         cantidad: cantidad,
         productosCarro: productosCarro
     });
 
-    const elementosProducto = document.querySelectorAll('.producto');
-    elementosProducto.forEach(elemento => {
-        const carrito = elemento.querySelector('.carro_producto');
-        const nombre = elemento.querySelector('.nombre_producto').innerText;
-        const producto = { nombre: nombre, cantidad: 1 };
-        carrito.addEventListener("click", () => local.agregarProducto(producto));
-    });
+    mostrarProductos()
+    local.actualizarCantidad();
+    
+    productosTienda.forEach(producto => {
+        const cantidadProducto = productosCarro.find(prod => prod.id === producto.id).cantidad;
+        producto.cantidad = cantidadProducto;
 
-    local.actualizarCantidad() */
+        const inputCantidad = document.getElementById(`cantidad-${producto.id}`);
+        if (inputCantidad) {
+            inputCantidad.value = cantidadProducto;
+        }
+    });
 }

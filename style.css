@@ -95,7 +95,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    cursor: pointer;
 }
 
 .cantidad{
@@ -104,19 +104,4 @@ body {
     height: 28px;
     padding: 0;
     text-align: center;
-}
-
-.btn_agregar {
-   width: 100px;
-   margin-top: 5px; 
-   background-color: #5EF38C;
-   border-radius: 5px;
-   border: 1px solid #10512A; 
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-
-.txt_agregar{
-    margin: 5px;
 }
