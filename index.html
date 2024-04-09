@@ -30,6 +30,12 @@
                 <progress id="meter" value="0" max="1">Tu navegador no soporta las barras de progreso.</progress>
                 <span id="duracion">00:00</span>
             </div>
+            <div>
+                <img src="/img/anterior.png" class="btn siguiente" id="btn_siguiente"></img>
+                <img src="/img/siguiente.png" class="btn siguiente" id="btn_siguiente"></img>
+                
+            </div>
+            
             <div id="aviso">&nbsp;</div>
         </div>
         
@@ -46,6 +52,8 @@
         
             <!-- Agrega más canciones aquí -->
         </div>
+        <button onclick="siguienteCancion()" >Siguiente</button>
+        <button onclick="anteriorCancion()" >Anterior</button>
         <div class="separador"></div>
     </div>
     <p>Works better in Chrome™</p>

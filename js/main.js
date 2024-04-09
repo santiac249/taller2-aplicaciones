@@ -1,18 +1,12 @@
-/*
-Audio tomado de:
-  https://pixabay.com/music/
-Libreria de sonido:
-  https://github.com/goldfire/howler.js
-*/
-
-// let mp3 = "https://res.cloudinary.com/dpwnji5mr/video/upload/v1668255106/demo/powerful-beat-121791_ninqyk.mp3";
-let mp3 = "/mp3/audio1.mp3"; // Ruta a
+let mp3 = "/mp3/audio1.mp3"; 
 let control_volumen;
 let btn_play, btn_pause, meter, actual, duracion;
 let sonidos, volumen;
 let audioActualId;
 var paused = false;
 var saveSeek;
+let pos_actual = 0;
+const audiosLista = ['audio1', 'audio2']
 window.onload = function () {
     btn_play = document.getElementById("btn_play");
     btn_pause = document.getElementById("btn_pause");
@@ -43,6 +37,7 @@ window.onload = function () {
             onend: detenerProgreso
         }),
     };
+
     btn_play.addEventListener("click", pausar);
     btn_pause.addEventListener("click", pausar);
     control_volumen.addEventListener("change", actualizarVolumen);
@@ -56,17 +51,18 @@ window.onload = function () {
 
 }
 
-
 function reproducir(audioId) {
   
         Object.keys(sonidos).forEach(function (key) {
             sonidos[key].pause();
         });
+        sonidos[audioId].seek(0);
         // Reproduce el audio seleccionado
         sonidos[audioId].play();
         btn_play.classList.add("ocultar");
         btn_pause.classList.remove("ocultar");
 
+        pos_actual = audiosLista.findIndex(x => x == audioId);
         audioActualId = audioId;
         paused= false;
 
@@ -127,11 +123,34 @@ function actualizarProgreso() {
     meter.value = currentTime / duration;
 }
 
-
 function actualizarVolumen(evento) {
     volumen = evento.target.value;
     Object.keys(sonidos).forEach(function (key) {
         sonidos[key].volume(volumen);
     });
     localStorage.setItem("volumen", volumen);
+}
+
+function siguienteCancion(){
+    detenerProgreso();
+    if(pos_actual+1 < audiosLista.length){
+        pos_actual++;
+    } else {
+        pos_actual=0;
+    }
+    const idReproducir = audiosLista[pos_actual]
+
+    reproducir(idReproducir)
+}
+
+function anteriorCancion(){
+    detenerProgreso();
+    if(pos_actual-1 < 0){
+        pos_actual= audiosLista.length -1;
+    } else {
+        pos_actual--;
+    }
+    const idReproducir = audiosLista[pos_actual]
+
+    reproducir(idReproducir)
 }

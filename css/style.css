@@ -190,3 +190,8 @@
   .ocultar{
     display:none;
   }
+
+  #btn_siguiente{
+    height: 35px;
+    width: 35px;
+  }
