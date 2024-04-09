@@ -11,7 +11,8 @@ let control_volumen;
 let btn_play, btn_pause, meter, actual, duracion;
 let sonidos, volumen;
 let audioActualId;
-
+var paused = false;
+var saveSeek;
 window.onload = function () {
     btn_play = document.getElementById("btn_play");
     btn_pause = document.getElementById("btn_pause");
@@ -42,7 +43,7 @@ window.onload = function () {
             onend: detenerProgreso
         }),
     };
-    btn_play.addEventListener("click", reproducir);
+    btn_play.addEventListener("click", pausar);
     btn_pause.addEventListener("click", pausar);
     control_volumen.addEventListener("change", actualizarVolumen);
     volumen = localStorage.getItem("volumen");
@@ -57,70 +58,37 @@ window.onload = function () {
 
 
 function reproducir(audioId) {
-    if (audioId == audioActualId) {
-        console.log("hola")
-        sonidos[audioActualId].play();
-    } else {
-        // Pausa todos los audios antes de reproducir uno nuevo
+  
         Object.keys(sonidos).forEach(function (key) {
             sonidos[key].pause();
         });
-
         // Reproduce el audio seleccionado
         sonidos[audioId].play();
         btn_play.classList.add("ocultar");
         btn_pause.classList.remove("ocultar");
 
         audioActualId = audioId;
-    }
+        paused= false;
 
 }
-
-
-
-// function reproducir() {
-//     //let audioId = elemento.getAttribute("data-id");
-//     // Verifica si el audio asociado con el ID proporcionado existe
-//     if (sonidos[audioId]) {
-//         // Pausa todos los audios antes de reproducir uno nuevo
-//         Object.keys(sonidos).forEach(function (key) {
-//             sonidos[key].pause();
-//         });
-
-//         // Reproduce el audio seleccionado
-//         sonidos[audioId].play();
-//         btn_play.classList.add("ocultar");
-//         btn_pause.classList.remove("ocultar");
-//         audioActualId = audioId; // Actualiza el ID del audio actual
-//     } else {
-//         console.error("El ID de audio proporcionado no existe:", audioId);
-//     }
-// }
-
-
-
 
 function pausar() {
 
-    Object.keys(sonidos).forEach(function (key) {
-        sonidos[key].pause();
-    });
-
-    btn_play.classList.remove("ocultar");
-    btn_pause.classList.add("ocultar");
-}
-
-// function pausar() {
-//     console.log(audioActualId);
-//     // Verifica si hay un audio actual y si está reproduciéndose
-//     if (audioActualId && sonidos[audioActualId].playing()) {
-//         // Pausa el audio actual
-//         sonidos[audioActualId].pause();
-//         // Actualiza los botones de reproducción y pausa
-//         btn_play.classList.remove("ocultar");
-//         btn_pause.classList.add("ocultar");
-//     }
-// }
+    if (paused) {
+        sonidos[audioActualId].play();
+      
+        btn_play.classList.add("ocultar");
+        btn_pause.classList.remove("ocultar");
+        paused = false;
+    } else {
+   
+        sonidos[audioActualId].pause();
+        btn_play.classList.remove("ocultar");
+        btn_pause.classList.add("ocultar");
+        paused = true;
+        
+    }
+};
 
 function iniciarProgreso() {
     intervaloProgreso = setInterval(actualizarProgreso, 1000);
