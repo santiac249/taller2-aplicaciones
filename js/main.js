@@ -19,7 +19,7 @@ window.onload = function () {
     sonidos = {
 
         audio1: new Howl({
-            src: ["/mp3/audio1.mp3"],
+            src: ["/ogg/audio1.ogg"],
             volume: .2,
             loop: true,
             stereo: 0,
@@ -29,7 +29,7 @@ window.onload = function () {
         }),
 
         audio2: new Howl({
-            src: ["/mp3/audio2.mp3"],
+            src: ["/ogg/audio2.ogg"],
             volume: .2,
             loop: true,
             stereo: 0,
@@ -39,7 +39,7 @@ window.onload = function () {
         }),
 
         audio3: new Howl({
-            src: ["/mp3/audio3.mp3"],
+            src: ["/ogg/audio3.ogg"],
             volume: .2,
             loop: true,
             stereo: 0,
