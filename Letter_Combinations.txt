@@ -1,0 +1,32 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class Solution {
+    public List<String> letterCombinations(String digits) {
+    List<String> combinaciones = new ArrayList<>();
+        if (digits == null || digits.length() == 0) {
+            return combinaciones;
+        }
+
+        String[] mapping = {
+            "abc", "def", "ghi", "jkl",
+            "mno", "pqrs", "tuv", "wxyz"
+        };
+
+        combinar(digits, combinaciones, mapping, "", 0);
+        return combinaciones;
+    }
+
+    private void combinar(String digits, List<String> combinaciones, String[] mapping, String current, int index) {
+        if (index == digits.length()) {
+            combinaciones.add(current);
+            return;
+        }
+
+        String letras = mapping[digits.charAt(index) - '2'];
+        for (char letra : letras.toCharArray()) {
+            combinar(digits, combinaciones, mapping, current + letra, index + 1);
+        }
+    }    
+}
+    
