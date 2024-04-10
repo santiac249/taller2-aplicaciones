@@ -1,6 +1,5 @@
 class Reproductor {
     constructor() {
-        this.mp3 = "/mp3/audio1.mp3";
         this.control_volumen;
         this.btn_play;
         this.btn_pause;
@@ -29,7 +28,7 @@ class Reproductor {
     crearSonidos() {
         this.sonidos = {
             audio1: new Howl({
-                src: ["/ogg/audio1.ogg"],
+                src: ["/ogg/audio1.a83803c6.ogg"],
                 volume: 0.2,
                 loop: true,
                 stereo: 0,
@@ -38,7 +37,7 @@ class Reproductor {
                 onend: this.detenerProgreso.bind(this)
             }),
             audio2: new Howl({
-                src: ["/ogg/audio2.ogg"],
+                src: ["/ogg/audio2.9067c995.ogg"],
                 volume: 0.2,
                 loop: true,
                 stereo: 0,
@@ -47,7 +46,7 @@ class Reproductor {
                 onend: this.detenerProgreso.bind(this)
             }),
             audio3: new Howl({
-                src: ["/ogg/audio3.ogg"],
+                src: ["/ogg/audio3.6fead6d8.ogg"],
                 volume: 0.2,
                 loop: true,
                 stereo: 0,
